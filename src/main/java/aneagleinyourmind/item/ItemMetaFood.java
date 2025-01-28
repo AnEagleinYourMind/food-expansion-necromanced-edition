@@ -30,33 +30,33 @@ public class ItemMetaFood extends ItemFood {
     private static final Set<Integer> NEGATIVE_POTION_IDS = new HashSet<>(Arrays.asList(2, 4, 7, 9, 15, 17, 18, 19, 20));
 
     public static final MetaFoodEntry[] FOOD_ENTRIES = {
-        // TODO: saturation is written as it appears in AppleCore, not as the correct multiplier thingy
-        new MetaFoodEntry("jelly", 4, 2.5f),
-        new MetaFoodEntry("bacon_raw", 1, 0.25f), // 1
-        new MetaFoodEntry("bacon_cooked", 3, 1.25f), // 2
-        new MetaFoodEntry("fried_egg", 2, 0.75f), // 3
-        new MetaFoodEntry("bacon_and_eggs", 7, 6.0f), // 4
-        new MetaFoodEntry("carrot_soup", 10, 10f), // 5
-        new MetaFoodEntry("mutton_raw", 2, 0.75f), // 6
-        new MetaFoodEntry("mutton_cooked", 6, 4.5f), // 7
-        new MetaFoodEntry("squid_raw", 1, 0.25f), // 8
-        new MetaFoodEntry("squid_cooked", 3, 1.5f), // 9
-        new MetaFoodEntry("dried_flesh", 6, 1.25f), // 10
-        new MetaFoodEntry("chocolate_bar", 8, 8f), // 11
-        new MetaFoodEntry("spider_eye_stew", 4, 2f), // 12
-        new MetaFoodEntry("nether_wart_stew", 4, 1.75f), // 13
-        new MetaFoodEntry("cactus_fruit", 1, 0.25f), // 14
-        new MetaFoodEntry("horse_meat_raw", 3, 0.75f), // 15
-        new MetaFoodEntry("horse_meat_cooked", 8, 6.5f), // 16
-        new MetaFoodEntry("forbidden_fruit", 20, 10f), // 17
-        new MetaFoodEntry("cooked_mushroom", 2, 1f), // 18
-        new MetaFoodEntry("carrot_pie", 8, 6.5f), // 19
-        new MetaFoodEntry("bat_wing_raw", 1, 0.25f), // 20
-        new MetaFoodEntry("bat_wing_cooked", 3, 0.75f), // 21
-        new MetaFoodEntry("blaze_cream_soup", 4, 1.75f), // 22
-        new MetaFoodEntry("melon_salad", 6, 3.75f), // 23
-        new MetaFoodEntry("roasted_seeds", 1, 0.25f), // 24
-        new MetaFoodEntry("dough", 0, 0.25f), // 25
+        // saturation is represented on a 0-1 scale
+        new MetaFoodEntry("jelly", 4, 0.25f),
+        new MetaFoodEntry("bacon_raw", 1, 0.025f), // 1
+        new MetaFoodEntry("bacon_cooked", 3, 0.125f), // 2
+        new MetaFoodEntry("fried_egg", 2, 0.075f), // 3
+        new MetaFoodEntry("bacon_and_eggs", 7, .6f), // 4
+        new MetaFoodEntry("carrot_soup", 10, 1f), // 5
+        new MetaFoodEntry("mutton_raw", 2, 0.075f), // 6
+        new MetaFoodEntry("mutton_cooked", 6, 0.45f), // 7
+        new MetaFoodEntry("squid_raw", 1, 0.025f), // 8
+        new MetaFoodEntry("squid_cooked", 3, 0.15f), // 9
+        new MetaFoodEntry("dried_flesh", 6, 0.125f), // 10
+        new MetaFoodEntry("chocolate_bar", 8, 0.8f), // 11
+        new MetaFoodEntry("spider_eye_stew", 4, 0.2f), // 12
+        new MetaFoodEntry("nether_wart_stew", 4, 0.175f), // 13
+        new MetaFoodEntry("cactus_fruit", 1, 0.025f), // 14
+        new MetaFoodEntry("horse_meat_raw", 3, 0.075f), // 15
+        new MetaFoodEntry("horse_meat_cooked", 8, 0.65f), // 16
+        new MetaFoodEntry("forbidden_fruit", 20, 1f), // 17
+        new MetaFoodEntry("cooked_mushroom", 2, 0.1f), // 18
+        new MetaFoodEntry("carrot_pie", 8, 0.65f), // 19
+        new MetaFoodEntry("bat_wing_raw", 1, 0.025f), // 20
+        new MetaFoodEntry("bat_wing_cooked", 3, 0.075f), // 21
+        new MetaFoodEntry("blaze_cream_soup", 4, 0.175f), // 22
+        new MetaFoodEntry("melon_salad", 6, 0.375f), // 23
+        new MetaFoodEntry("roasted_seeds", 1, 0.025f), // 24
+        new MetaFoodEntry("dough", 0, 0.025f), // 25
     };
 
     public ItemMetaFood(String unlocalizedName, boolean isDogFood) {
