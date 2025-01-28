@@ -8,7 +8,7 @@ public class Config {
     /* TODO config options:
 
      1) toggle individual recipes (forbidden fruit recipe off by default)
-     2) toggle mob drops
+     2) toggle mob drops (especially squid)
      */
 
     public static String greeting = "Hello World";
