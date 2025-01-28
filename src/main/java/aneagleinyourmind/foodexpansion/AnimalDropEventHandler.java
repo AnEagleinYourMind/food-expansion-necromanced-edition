@@ -27,13 +27,14 @@ public class AnimalDropEventHandler {
         Entity diedEntity = event.entity;
         int quantity = random.nextInt(3); // TODO: looting enchantment?
 
-        if (diedEntity instanceof EntitySheep) {
+        // Java 17 pattern matching can achieve this
+        if (diedEntity instanceof EntitySheep && Config.enable_sheep_drops) {
             diedEntity.entityDropItem(new ItemStack(ITEM_META_FOOD, quantity, 6), 0);
-        } else if (diedEntity instanceof EntitySquid) {
+        } else if (diedEntity instanceof EntitySquid && Config.enable_squid_drops) {
             diedEntity.entityDropItem(new ItemStack(ITEM_META_FOOD, quantity, 8), 0);
-        } else if (diedEntity instanceof EntityHorse) {
+        } else if (diedEntity instanceof EntityHorse && Config.enable_horse_drops) {
             diedEntity.entityDropItem(new ItemStack(ITEM_META_FOOD, quantity, 15), 0);
-        } else if (diedEntity instanceof EntityBat) {
+        } else if (diedEntity instanceof EntityBat && Config.enable_bat_drops) {
             diedEntity.entityDropItem(new ItemStack(ITEM_META_FOOD, quantity, 20), 0);
         }
     }

@@ -70,7 +70,10 @@ public class CommonProxy {
         GameRegistry.addSmelting(Items.wheat_seeds, new ItemStack(ITEM_META_FOOD, 1, 24), xp);
         // bread from dough
         GameRegistry.addSmelting(new ItemStack(ITEM_META_FOOD, 1, 25), new ItemStack(Items.bread), xp);
-        // TODO forbidden fruit (default off in config)
+
+        if (Config.enable_forbidden_fruit) {
+            GameRegistry.addShapedRecipe(new ItemStack(ITEM_META_FOOD, 1, 17), "NNN", "NDN", "NNN", 'N', new ItemStack(Items.golden_apple, 1, 1), 'D', new ItemStack(Blocks.diamond_block));
+        }
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
