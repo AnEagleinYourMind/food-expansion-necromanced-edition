@@ -11,6 +11,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 
@@ -80,6 +81,19 @@ public class CommonProxy {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         AnimalDropEventHandler dropHandler = new AnimalDropEventHandler();
+
+        final int[] rawMeatMetas = {1, 6, 8, 15, 20};
+        final int[] cookedMeatMetas = {2, 7, 9, 16, 21};
+
+        for (int i = 0; i < rawMeatMetas.length; i++) {
+            OreDictionary.registerOre("listAllmeatraw", new ItemStack(ITEM_META_FOOD, 1, rawMeatMetas[i]));
+        }
+
+        for (int i = 0; i < cookedMeatMetas.length; i++) {
+            OreDictionary.registerOre("listAllmeatcooked", new ItemStack(ITEM_META_FOOD, 1, cookedMeatMetas[i]));
+        }
+
+        OreDictionary.registerOre("listAllfruit", new ItemStack(ITEM_META_FOOD, 1, 14));
     }
 
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
