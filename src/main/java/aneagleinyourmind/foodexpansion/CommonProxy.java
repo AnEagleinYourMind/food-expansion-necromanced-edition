@@ -66,7 +66,8 @@ public class CommonProxy {
         GameRegistry.addSmelting(Blocks.brown_mushroom, new ItemStack(ITEM_META_FOOD, 1, 18), xp);
         // roasted seeds
         GameRegistry.addSmelting(Items.wheat_seeds, new ItemStack(ITEM_META_FOOD, 1, 24), xp);
-
+        // bread from dough
+        GameRegistry.addSmelting(new ItemStack(ITEM_META_FOOD, 1, 25), new ItemStack(Items.bread), xp);
         // TODO forbidden fruit (default off in config)
     }
 
