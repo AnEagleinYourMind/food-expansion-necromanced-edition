@@ -31,7 +31,7 @@ public class ItemMetaFood extends ItemFood {
 
     public static final MetaFoodEntry[] FOOD_ENTRIES = {
         // saturation is represented on a 0-1 scale
-        new MetaFoodEntry("jelly", 4, 0.25f),
+        new MetaFoodEntry("jelly", 4, 0.25f),  // 0
         new MetaFoodEntry("bacon_raw", 1, 0.025f), // 1
         new MetaFoodEntry("bacon_cooked", 3, 0.125f), // 2
         new MetaFoodEntry("fried_egg", 2, 0.075f), // 3
@@ -84,16 +84,25 @@ public class ItemMetaFood extends ItemFood {
                 case 12, 13, 19, 22, 23, 26 -> { // foods with bowls
                     ItemStack bowl = new ItemStack(Items.bowl);
 
-                    boolean couldAddItem = player.inventory.addItemStackToInventory(bowl);
+                   returnItem(player, bowl);
+                }
+                case 27 -> {
+                    ItemStack stick = new ItemStack(Items.stick);
 
-                    if (!couldAddItem) {
-                        // throw the bowl on the ground if there is no inventory space
-                        player.func_146097_a(bowl, false, false);
-                    }
+                    returnItem(player, stick);
                 }
             }
 
             applyPotionEffectsForFood(meta, world, player);
+        }
+    }
+
+    private void returnItem(EntityPlayer player, ItemStack returnedItem) {
+        boolean couldAddItem = player.inventory.addItemStackToInventory(returnedItem);
+
+        if (!couldAddItem) {
+            // throw the item on the ground if there is no inventory space
+            player.func_146097_a(returnedItem, false, false);
         }
     }
 
@@ -152,7 +161,7 @@ public class ItemMetaFood extends ItemFood {
     // saturation
     @Override
     public float func_150906_h(ItemStack stack) {
-        return FOOD_ENTRIES[stack.getItemDamage()].foodAmount();
+        return FOOD_ENTRIES[stack.getItemDamage()].saturation();
     }
 
     @Override
