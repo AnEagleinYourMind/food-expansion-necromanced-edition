@@ -15,10 +15,17 @@ public class FoodExpansion {
 
     public static final String MODID = "foodexpansion";
     public static final String RESOURCE_ID = MODID + ":";
-    public static final Logger LOG = LogManager.getLogger(MODID);
+    public static final Logger LOGGER = LogManager.getLogger(MODID);
 
     @SidedProxy(clientSide = "aneagleinyourmind.foodexpansion.ClientProxy", serverSide = "aneagleinyourmind.foodexpansion.CommonProxy")
     public static CommonProxy proxy;
+
+    /*
+    food items to add:
+        Sandwich(es)
+        Chocolate cake
+        Red jelly (magma cream)
+     */
 
     @Mod.EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the

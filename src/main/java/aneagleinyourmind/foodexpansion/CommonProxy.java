@@ -10,7 +10,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
@@ -21,6 +20,8 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent event) {
         Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
+
+        final float xp = 0.35f; // the same across all meat smelting recipes in Minecraft
 
         GameRegistry.registerItem(ITEM_META_FOOD = new ItemMetaFood("fe_food", false), "fe_food");
 
@@ -48,11 +49,13 @@ public class CommonProxy {
         GameRegistry.addShapelessRecipe(new ItemStack(ITEM_META_FOOD, 1, 22), Items.blaze_powder, Items.blaze_powder, Items.milk_bucket, Items.bowl); // TODO EFFECT
         // melon salad
         GameRegistry.addShapelessRecipe(new ItemStack(ITEM_META_FOOD, 1, 23), Items.melon, Items.melon, Items.melon, Items.bowl);
-
         // dough
         GameRegistry.addShapedRecipe(new ItemStack(ITEM_META_FOOD, 4, 25), "WWW", "WAW", "WWW", 'W', Items.wheat, 'A', Items.water_bucket);
+        // applesauce
+        GameRegistry.addShapelessRecipe(new ItemStack(ITEM_META_FOOD, 1, 26), Items.apple, Items.bowl);
+        // caramel apple
+        GameRegistry.addShapelessRecipe(new ItemStack(ITEM_META_FOOD, 1, 27), Items.apple, Items.stick, Items.sugar);
 
-        float xp = 0.35f; // the same across all meat smelting recipes in Minecraft
         // bacon
         GameRegistry.addSmelting(new ItemStack(ITEM_META_FOOD, 1, 1), new ItemStack(ITEM_META_FOOD, 1, 2), xp);
         // fried egg

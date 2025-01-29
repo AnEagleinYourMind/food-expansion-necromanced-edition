@@ -57,6 +57,8 @@ public class ItemMetaFood extends ItemFood {
         new MetaFoodEntry("melon_salad", 6, 0.375f), // 23
         new MetaFoodEntry("roasted_seeds", 1, 0.025f), // 24
         new MetaFoodEntry("dough", 0, 0.025f), // 25
+        new MetaFoodEntry("apple_sauce", 4, 0.35f), // 26
+        new MetaFoodEntry("caramel_apple", 5, 0.4f), // 27
     };
 
     public ItemMetaFood(String unlocalizedName, boolean isDogFood) {
@@ -69,7 +71,7 @@ public class ItemMetaFood extends ItemFood {
     @Override
     @SideOnly(Side.CLIENT)
     @SuppressWarnings("deprecation")
-    public boolean hasEffect(ItemStack stack) {
+    public boolean hasEffect(ItemStack stack) { // the enchantment shimmer effect
         return (stack.getItemDamage() == 17);
     }
 
@@ -79,7 +81,7 @@ public class ItemMetaFood extends ItemFood {
             int meta = stack.getItemDamage();
 
             switch (meta) {
-                case 12, 13, 19, 22, 23 -> { // foods with bowls
+                case 12, 13, 19, 22, 23, 26 -> { // foods with bowls
                     ItemStack bowl = new ItemStack(Items.bowl);
 
                     boolean couldAddItem = player.inventory.addItemStackToInventory(bowl);
@@ -115,7 +117,6 @@ public class ItemMetaFood extends ItemFood {
 
                 potionEffects.forEach(effect -> {
                     int potionId = effect.getPotionID();
-                    System.out.println(potionId);
                     if (NEGATIVE_POTION_IDS.contains(potionId)) {
                         idsToRemove.add(potionId);
                     }

@@ -24,5 +24,7 @@ item.fe_food.22.name=Blaze Cream Soup
 item.fe_food.23.name=Melon Salad
 item.fe_food.24.name=Roasted Seeds
 item.fe_food.25.name=Dough
+item.fe_food.26.name=Apple Sauce
+item.fe_food.27.name=Caramel Apple
 
 itemGroup.foodExpansion=Food Expansion
